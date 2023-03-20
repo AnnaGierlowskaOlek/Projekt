@@ -15,14 +15,12 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v2
 
-    # TODO: setup compiler
     - name: "Setup gcc"
       shell: bash
       run: /
         sudo apt update
         sudo apt install gcc-10 g++-10
 
-    # TODO: run tests
     - name: "Test projekt"
       run: make test
 
@@ -35,15 +33,13 @@ jobs:
     - name: "Checkout"
       uses: actions/checkout@v2
 
-    # TODO: setup compiler
-     - name: "Setup gcc"
+    - name: "Setup gcc"
       shell: bash
       run: /
         sudo apt update
         sudo apt install gcc-10 g++-10 
 
-    # TODO: build project
-      - name: "Build projekt"
+    - name: "Build projekt"
       run: make build
 
       
