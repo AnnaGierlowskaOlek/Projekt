@@ -1,0 +1,47 @@
+name: "Build & test"
+
+on:
+  # TODO: setup trigger tu run this job for every pull request
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: "Test"
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: "Checkout"
+      uses: actions/checkout@v2
+
+    # TODO: setup compiler
+    - name: "Setup gcc"
+      shell: bash
+      run: /
+        sudo apt update
+        sudo apt install gcc-10 g++-10
+
+    # TODO: run tests
+    - name: "Test projekt"
+      run: make test
+
+  build:
+    name: "Build"
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: "Checkout"
+      uses: actions/checkout@v2
+
+    # TODO: setup compiler
+     - name: "Setup gcc"
+      shell: bash
+      run: /
+        sudo apt update
+        sudo apt install gcc-10 g++-10 
+
+    # TODO: build project
+      - name: "Build projekt"
+      run: make build
